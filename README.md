@@ -15,9 +15,9 @@
 </tr>
 
 <tr>
-    <td><img width="200px" height="360px" src="docs/image/ss/ss_1.png"></td>
-    <td><img width="200px" height="360px" src="docs/image/ss/ss_2.png"></td>
-    <td><img width="200px" height="360px" src="docs/image/ss/ss_3.png"></td>
+    <td><img width="200px" height="360px" src="docs/image/ss_1.png"></td>
+    <td><img width="200px" height="360px" src="docs/image/ss_2.png"></td>
+    <td><img width="200px" height="360px" src="docs/image/ss_3.png"></td>
 </tr>
 
 </table>
