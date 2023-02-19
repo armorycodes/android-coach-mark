@@ -7,10 +7,8 @@ import com.frogobox.research.R
 import com.frogobox.research.common.base.BaseBindActivity
 import com.frogobox.research.common.delegate.PreferenceDelegates
 import com.frogobox.research.databinding.ActivityMainBinding
-import com.skydoves.balloon.ArrowPositionRules
-import com.skydoves.balloon.Balloon
-import com.skydoves.balloon.BalloonAnimation
-import com.skydoves.balloon.BalloonSizeSpec
+import com.skydoves.balloon.*
+import com.skydoves.balloon.overlay.BalloonOverlayAnimation
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -53,15 +51,25 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>() {
             .setArrowPositionRules(ArrowPositionRules.ALIGN_ANCHOR)
             .setArrowSize(10)
             .setArrowPosition(0.5f)
-            .setPadding(12)
+            .setPadding(8)
             .setCornerRadius(8f)
             .setBackgroundColorResource(R.color.teal_200)
             .setBalloonAnimation(BalloonAnimation.ELASTIC)
             .setLifecycleOwner(this)
+            .setIsVisibleOverlay(true) // sets the visibility of the overlay for highlighting an anchor.
+            .setOverlayColorResource(R.color.purple_200) // background color of the overlay using a color resource.
+            .setOverlayPadding(0f) // sets a padding value of the overlay shape internally.
+            .setOverlayPaddingColorResource(R.color.white) // sets color of the overlay padding using a color resource.
+            .setBalloonOverlayAnimation(BalloonOverlayAnimation.FADE) // default is fade.
+            .setDismissWhenOverlayClicked(false) // disable dismissing the balloon when the overlay is clicked.
             .build()
 
         binding.apply {
-            balloon.showAlignRight(tvSample)
+
+            tvTop.showAlignBottom(balloon)
+//            tvCenter.showAlignBottom(balloon)
+//            tvBottom.showAlignBottom(balloon)
+
         }
     }
 
